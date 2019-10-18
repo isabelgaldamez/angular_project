@@ -1,0 +1,42 @@
+<style>
+    h3{
+        display: inline-block;
+        vertical-align: middle;
+    }
+    p{
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 20px;
+    }
+    button{
+        padding: 15px;
+        margin-left: 10px;
+        border-radius: 10px;
+        font-size: 15px;
+    }
+    .delete{
+        background-color: rgb(228, 132, 132);
+        color: white;
+    }
+</style>
+<h2>Product Details</h2>
+
+<table>
+
+<tr>
+    <td><h3>Name : </h3></td> 
+    <td><p>{{productInfo.name}}</p></td> 
+<tr>
+<tr>
+    <td><h3>Quantity : </h3></td> 
+    <td><p>{{productInfo.quantity}}</p></td> 
+<tr>
+<tr>
+    <td><h3>Price : </h3></td> 
+    <td><p>{{productInfo.price}}</p></td> 
+<tr>
+<tr>
+    <td></td> 
+    <td><button [routerLink]="['/']" >Back</button><button class='delete'(click) = deleteRecord(productInfo._id)>Delete</button></td> 
+<tr>
+<table>

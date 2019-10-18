@@ -1,0 +1,58 @@
+<style>
+    table {
+    margin-top: 30px;
+    border: 1px solid black;
+    border-radius: 10px;
+    }
+    table th{
+        padding: 20px;
+        font-size: 20px;
+        border-right: 1px solid black;
+    }
+    table td{
+        padding: 20px;
+        font-size: 20px;
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+    }
+    button{
+        /* height: 20px; */
+        font-size: 20px;
+        border-radius: 10px;
+    }
+    h3{
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+    .add_new{
+        display: inline-block;
+        vertical-align: middle;
+        padding: 10px;
+    }
+    button:nth-child(2){
+        margin-left: 5px;
+    }
+</style>
+
+<h3>Product List</h3>
+<button class='add_new' [routerLink]="['/new']">Add New Product</button>
+<table>
+    <thead>
+        <!-- <th>Id</th> -->
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Actions</th>
+    </thead>
+    <tbody>
+    <!-- <tr *ngFor = "let record of allRecords" > -->
+        <tr *ngFor = "let record of allRecords">
+            <td>{{record.name}}</td>
+            <td>{{record.quantity}}</td>
+            <td>${{record.price}}.00</td>
+            <td><button routerLink="/edit/{{record._id}}">Edit</button><button routerLink="/show/{{record._id}}">Details</button></td>
+                
+        </tr>
+    </tbody>
+</table>

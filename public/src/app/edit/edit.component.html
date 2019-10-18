@@ -1,0 +1,39 @@
+  
+<style>
+    .addAuthor{
+        padding: 10px;
+        border: 1px solid blue;
+        border-radius: 10px;
+    }
+    .addAuthor input{
+        margin-right: 200px;
+        margin-top: 30px;
+        margin-left: 30px;
+    }
+    .cancel, .submit{
+        margin-top: 30px;
+        height: 40px;
+        /* width: 50px; */
+        font-size: 20px;
+        border-radius: 10px;
+        
+    }
+    .submit{
+        margin-left: 10px;
+        
+    }
+</style>
+
+
+<!-- <a [routerLink]="['/']">Home</a> -->
+<h4>Update Product: </h4>
+<div class='addAuthor'>
+    <form (submit) = 'editRecord(recordUpdate._id)' >
+        <!-- Name: <input type = 'text' name='name' [value] = 'editThisRecord.name' [(ngModel)] = 'recordUpdate.name'> -->
+        Name: <input type = 'text' name='name' [(ngModel)] = 'recordUpdate.name'><br>
+        Quantity: <input type = 'text' name='name' [(ngModel)] = 'recordUpdate.productQuantity'><br>
+        Price: <input type = 'text' name='name' [(ngModel)] = 'recordUpdate.price'><br>
+        <button [routerLink]="['/']" class='cancel'>Cancel</button>
+        <button class='submit'>Update</button>
+    </form>
+</div>
